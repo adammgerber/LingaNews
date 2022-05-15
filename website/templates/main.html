@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <title>LingaNews</title>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1>Welcome to LingaNews!</h1>
+            <hr/>
+        </div>
+        <div class="text-center">
+            <form method="POST" class="row ">
+                <select id="category" class="col  form-select mb-5 mx-2" aria-label="Default select example" name="category-select">
+                    <option selected>Choose your Category</option>
+                    <option value="business">Business</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="general">General</option>
+                    <option value="health">Health</option>
+                    <option value="science">Science</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                </select>
+                <select id='language' class="col form-select mb-5 mx-2 language" aria-label="Default select example" name="language-select">
+                    <option selected>Choose your Language</option>
+                    <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                    <option value="nl">Dutch</option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="he">Hebrew</option>
+                    <option value="it">Italian</option>
+                    <option value="no">Norweigan</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="ru">Russian</option>
+                    <option value="es">Spanish</option>
+                    <option value="sv">Swedish</option>
+                </select>
+                
+                <button onClick="" class=" btn btn-outline-primary mb-5">Update</button>
+            </form>
+        </div>
+
+        
+        
+        <div class="row">
+            {% for new, des, i, u in context %}
+            <div class="col-lg-4 col-md-6 col-sm 12 mb-5">
+                
+                <div class="card shadow-sm h-100">
+                    <img src="{{i}}" alt="" class="img-fluid">
+                    <div class="card-body">
+                        <div class="card-title">
+                            <h5>{{new}} </h5> 
+                        </div>
+                        <div class="card-text pb-5">
+                            <p>{{des}}</p> 
+                        </div>
+                        <a href="{{u}}" class="btn btn-outline-primary rounded-0 mt-8 mb-2 position-absolute bottom-0 ">Read More</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            {% endfor %}
+        </div>
+       
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+    // function getValue() {
+    //     selectElement = document.querySelector('#category-select');
+    //     output = selectElement.value;
+    //     document.querySelector('category-select').value = output
+    // }
+    $('#language').on('change', function(){
+     var selectedval=$(this).val();
+  // alert(selectedval);
+     $('language').html(selectedval)
+
+ })   
+</script>
