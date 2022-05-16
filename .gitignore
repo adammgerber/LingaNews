@@ -1,8 +1,0 @@
-.gitignore
-Procfile
-requirements.txt
-runtime.txt
-.env
-__pycache__
-/website/__pycache__
-/website/.env
