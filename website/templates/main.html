@@ -28,7 +28,7 @@
                     <option value="technology">Technology</option>
                 </select>
                 <select id='language' class="col form-select mb-5 mx-2 language" aria-label="Default select example" name="language-select">
-                    <option selected>Choose your Language</option>
+                    <option selected class="language">Choose your Language</option>
                     <option value="ar">Arabic</option>
                     <option value="zh">Chinese</option>
                     <option value="nl">Dutch</option>
@@ -54,7 +54,7 @@
             {% for new, des, i, u in context %}
             <div class="col-lg-4 col-md-6 col-sm 12 mb-5">
                 
-                <div class="card shadow-sm h-100">
+                <div class="card shadow-lg h-100">
                     <img src="{{i}}" alt="" class="img-fluid">
                     <div class="card-body">
                         <div class="card-title">
@@ -78,16 +78,5 @@
 
 <script type="text/javascript">
 
-
-    // function getValue() {
-    //     selectElement = document.querySelector('#category-select');
-    //     output = selectElement.value;
-    //     document.querySelector('category-select').value = output
-    // }
-    $('#language').on('change', function(){
-     var selectedval=$(this).val();
-  // alert(selectedval);
-     $('language').html(selectedval)
-
- })   
+ 
 </script>
